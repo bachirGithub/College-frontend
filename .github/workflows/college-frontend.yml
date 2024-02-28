@@ -1,11 +1,11 @@
-name: Deploy to Railway
+name: Build for deploying to Railway
 on:
   pull_request:
     branches: [main]
   push:
     branches: [main]
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
