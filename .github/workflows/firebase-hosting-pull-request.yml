@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Install Firebase tools and Angular CLI
         run: npm i -g firebase-tools @angular/cli@15
+      - name: Installer the builder
+        run: npm i @angular-devkit/build-angular
       - uses: actions/checkout@v4
       - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
