@@ -8,12 +8,12 @@ permissions:
   contents: read
   pull-requests: write
 jobs:
-  befor_script:
-    - npm i -g firebase-tools @angular/cli@15
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
+      - name: Install Firebase tools and Angular CLI
+        run: npm i -g firebase-tools @angular/cli@15
       - uses: actions/checkout@v4
       - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
